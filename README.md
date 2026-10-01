@@ -92,6 +92,8 @@ Integer decision variables for ambulance allocation
 
 The objective is to minimize the total modeled cost of the EMS network while satisfying coverage and ambulance-capacity constraints.
 
+---
+
 # Decision Variables
 # First-Stage Assignment
 
@@ -107,12 +109,16 @@ $$ X_{ij}^{B} $$
 
 is a binary variable representing assignment of demand area i to a Type-B station at location j.
 
+---
+
 # Second-Stage Coverage
 $$ X_{ij}^{S} $$
 
 is a binary variable representing second-stage coverage of demand area i by station j.
 
 These variables represent backup coverage relationships within the EMS network.
+
+---
 
 # Ambulance Allocation
 
@@ -125,6 +131,8 @@ and the number of Type-B ambulances by:
 $$ n_j^B $$
 
 Both ambulance allocation variables are integer decision variables.
+
+---
 
 # Objective Function
 
