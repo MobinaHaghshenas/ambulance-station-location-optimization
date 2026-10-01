@@ -286,33 +286,33 @@ The main modeling steps are:
 
 **3.** Define candidate station locations
 
-4.Define station eligibility
+**4.** Define station eligibility
 
-5.Define first-stage coverage relationships
+**5.** Define first-stage coverage relationships
 
-6.Define second-stage coverage relationships
+**6.** Define second-stage coverage relationships
 
-7.Create binary station and coverage variables
+**7.** Create binary station and coverage variables
 
-8.Create integer ambulance allocation variables
+**8.** Create integer ambulance allocation variables
 
-9.Add coverage constraints
+**9.** Add coverage constraints
 
-10.Add station-type constraints
+**10.** Add station-type constraints
 
-11.Add ambulance capacity constraints
+**11.** Add ambulance capacity constraints
 
-12.Calculate the first-year modeled cost
+**12.** Calculate the first-year modeled cost
 
-13.Calculate NPV
+**13.** Calculate NPV
 
-14.Construct the objective function
+**14.** Construct the objective function
 
-15.Solve the mixed-integer optimization model
+**15.** Solve the mixed-integer optimization model
 
-16.Extract the selected stations and ambulance allocation
+**16.** Extract the selected stations and ambulance allocation
 
-The model is solved using the CBC optimization solver through PuLP.
+The model is solved using the **CBC optimization solver** through PuLP.
 
 ---
 
