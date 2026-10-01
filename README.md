@@ -142,28 +142,26 @@ $$ \min Z = \sum_j CFA X_{jj}^{A} + \sum_j CFB X_{jj}^{B} + \sum_j CA n_j^A + \s
 
 where:
 
-CFA = Type-A station cost
-
-CFB = Type-B station cost
-
-CA = Type-A ambulance cost
-
-CB = Type-B ambulance cost
-
-NPV = modeled Net Present Value of operating and response-related costs
+* CFA = Type-A station cost
+* CFB = Type-B station cost
+* CA = Type-A ambulance cost
+* CB = Type-B ambulance cost
+* NPV = modeled Net Present Value of operating and response-related costs
 
 The main cost parameters used in the implementation are:
 
-Parameter	Value
-Type-A ambulance cost	56,202
-Type-B ambulance cost	47,869
-Type-A station cost	494,152
-Type-B station cost	169,948
+| Parameter                  | Value       |
+| -------------------------- | ----------- |
+| Type-A ambulance cost      | 56,202      |
+| Type-B ambulance cost      | 47,869      |
+| Type-A station cost        | 494,152     |
+| Type-B station cost        | 169,948     |
+پ
 
 ---
 
-Coverage Constraints
-First-Stage Coverage
+# Coverage Constraints
+## First-Stage Coverage
 
 Each demand area must be assigned to an eligible station for first-stage coverage.
 
@@ -175,7 +173,7 @@ where F_i represents the set of stations capable of providing first-stage covera
 
 This constraint ensures that every demand area receives primary coverage.
 
-Second-Stage Coverage
+## Second-Stage Coverage
 
 The model also incorporates second-stage coverage relationships.
 
@@ -183,7 +181,7 @@ For demand areas requiring backup coverage, the model assigns an eligible statio
 
 The second-stage relationships are explicitly represented through the coverage parameters and binary decision variables in the implementation.
 
-Station Type Constraints
+## Station Type Constraints
 
 The model distinguishes between Type-A and Type-B stations.
 
