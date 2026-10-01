@@ -254,8 +254,11 @@ $$ h \neq g $$
 where:
 
 * `C₁` = first-year modeled operating/response-related cost
+  
 *`g` = annual growth rate
+
 *`h` = discount rate
+
 *`T` = planning horizon
 
 The implementation uses:
