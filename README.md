@@ -281,20 +281,35 @@ The optimization model was implemented in Python using PuLP.
 The main modeling steps are:
 
 1.Define the demand areas
+
 2.Define population and demand parameters
+
 3.Define candidate station locations
+
 4.Define station eligibility
+
 5.Define first-stage coverage relationships
+
 6.Define second-stage coverage relationships
+
 7.Create binary station and coverage variables
+
 8.Create integer ambulance allocation variables
+
 9.Add coverage constraints
+
 10.Add station-type constraints
+
 11.Add ambulance capacity constraints
+
 12.Calculate the first-year modeled cost
+
 13.Calculate NPV
+
 14.Construct the objective function
+
 15.Solve the mixed-integer optimization model
+
 16.Extract the selected stations and ambulance allocation
 
 The model is solved using the CBC optimization solver through PuLP.
@@ -321,21 +336,23 @@ The resulting ambulance configuration contains:
 ---
 
 # Selected Station Configuration
-Site	Station Type	Ambulances	Population / Ambulance
-4	B	1	50,863.00
-8	A	3	43,019.67
-11	A	2	54,677.00
-12	B	1	54,185.00
-17	A	2	51,392.50
-23	B	1	54,414.00
-24	B	1	54,724.00
-25	B	1	54,588.00
-29	A	3	42,015.33
-30	A	10	54,918.60
-32	B	1	53,884.00
-33	B	1	54,918.00
-47	B	1	54,079.00
-51	B	1	51,914.00
+
+| Site	|Station Type	|Ambulances|	Population / Ambulance       |
+| -------------------------- | ----------- | -------------------------- | ----------- |
+|4	|B	|1	|50,863.00|
+|8	|A	|3	|43,019.67|
+|11	|A	|2	|54,677.00|
+|12	|B	|1	|54,185.00|
+|17	|A	|2	|51,392.50|
+|23	|B	|1	|54,414.00|
+|24	|B	|1	|54,724.00|
+|25	|B	|1	|54,588.00|
+|29	|A	|3	|42,015.33|
+|30	|A	|10	|54,918.60|
+|32	|B	|1	|53,884.00|
+|33	|B	|1	|54,918.00|
+|47	|B	|1	|54,079.00|
+|51	|B	|1	|51,914.00|
 
 ---
 
@@ -377,7 +394,7 @@ This constraint links ambulance capacity to the population served by each select
 
 ---
 
-#First-Stage Coverage
+# First-Stage Coverage
 
 The number of first-stage covered demand areas varies between selected stations.
 
@@ -395,17 +412,18 @@ This demonstrates that the optimization simultaneously considers station locatio
 ---
 
 # Key Results
-Metric	Result
-Demand areas	65
-Planning horizon	5 years
-Selected stations	14
-Type-A ambulances	20
-Type-B ambulances	9
-Total ambulances	29
-Minimum population / ambulance	35,000
-Maximum population / ambulance	55,000
-Solver status	Optimal
-Solver	CBC
+|Metric |	Result       |
+| -------------------------- | ----------- |
+|Demand areas	|65|
+|Planning horizon	|5 years|
+|Selected stations	|14|
+|Type-A ambulances	|20|
+|Type-B ambulances	|9|
+|Total ambulances	|29|
+|Minimum population / ambulance	|35,000|
+|Maximum population / ambulance	|55,000|
+|Solver status	|Optimal|
+|Solver	|CBC|
 
 ---
 
@@ -415,7 +433,8 @@ The main value of this project is that it converts an operational healthcare pro
 
 Instead of only describing historical data, the model produces decisions about:
 
-`EMS Demand
+```text
+EMS Demand
     ↓
 Coverage Requirements
     ↓
@@ -427,7 +446,8 @@ Ambulance Allocation
     ↓
 Cost & NPV
     ↓
-Optimized EMS Network`
+Optimized EMS Network
+```
 
 This type of modeling can support strategic decisions involving:
 
