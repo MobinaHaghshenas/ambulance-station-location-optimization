@@ -280,11 +280,11 @@ The optimization model was implemented in Python using PuLP.
 
 The main modeling steps are:
 
-**1**Define the demand areas
+**1.** Define the demand areas
 
-2.Define population and demand parameters
+**2.** Define population and demand parameters
 
-3.Define candidate station locations
+**3.** Define candidate station locations
 
 4.Define station eligibility
 
