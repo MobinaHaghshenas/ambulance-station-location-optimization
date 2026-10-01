@@ -62,23 +62,7 @@ The optimization model jointly determines station location and ambulance allocat
 
 The overall modeling process is:
 
-```text
-EMS Planning Problem
-        ↓
-65 Demand Areas + Candidate Sites
-        ↓
-Coverage Relationships
-        ↓
-Decision Variables
-        ↓
-Mixed-Integer Optimization Model
-        ↓
-Cost + NPV Objective
-        ↓
-CBC Optimization
-        ↓
-Optimal EMS Configuration
-```
+![optimizationworkflow](results/optimization-workflow.png)
 ---
 
 ## Mathematical Optimization Model
