@@ -94,8 +94,8 @@ The objective is to minimize the total modeled cost of the EMS network while sat
 
 ---
 
-# Decision Variables
-# First-Stage Assignment
+## Decision Variables
+### First-Stage Assignment
 
 For each demand area i and eligible station location j:
 
@@ -111,7 +111,7 @@ is a binary variable representing assignment of demand area i to a Type-B statio
 
 ---
 
-# Second-Stage Coverage
+### Second-Stage Coverage
 $$ X_{ij}^{S} $$
 
 is a binary variable representing second-stage coverage of demand area i by station j.
@@ -120,7 +120,7 @@ These variables represent backup coverage relationships within the EMS network.
 
 ---
 
-# Ambulance Allocation
+### Ambulance Allocation
 
 The number of Type-A ambulances assigned to station j is represented by:
 
@@ -143,9 +143,13 @@ $$ \min Z = \sum_j CFA X_{jj}^{A} + \sum_j CFB X_{jj}^{B} + \sum_j CA n_j^A + \s
 where:
 
 CFA = Type-A station cost
+
 CFB = Type-B station cost
+
 CA = Type-A ambulance cost
+
 CB = Type-B ambulance cost
+
 NPV = modeled Net Present Value of operating and response-related costs
 
 The main cost parameters used in the implementation are:
