@@ -255,11 +255,11 @@ where:
 
 * `C₁` = first-year modeled operating/response-related cost
   
-*`g` = annual growth rate
+* `g` = annual growth rate
 
-*`h` = discount rate
+* `h` = discount rate
 
-*`T` = planning horizon
+* `T` = planning horizon
 
 The implementation uses:
 
