@@ -156,8 +156,8 @@ The main cost parameters used in the implementation are:
 | Type-B ambulance cost      | 47,869      |
 | Type-A station cost        | 494,152     |
 | Type-B station cost        | 169,948     |
-پ
 
+پ
 ---
 
 # Coverage Constraints
@@ -173,6 +173,7 @@ where F_i represents the set of stations capable of providing first-stage covera
 
 This constraint ensures that every demand area receives primary coverage.
 
+---
 ## Second-Stage Coverage
 
 The model also incorporates second-stage coverage relationships.
@@ -181,7 +182,9 @@ For demand areas requiring backup coverage, the model assigns an eligible statio
 
 The second-stage relationships are explicitly represented through the coverage parameters and binary decision variables in the implementation.
 
-## Station Type Constraints
+---
+
+# Station Type Constraints
 
 The model distinguishes between Type-A and Type-B stations.
 
@@ -195,7 +198,10 @@ for each candidate location j.
 
 The model therefore selects the station type as part of the optimization decision.
 
-Station and Ambulance Consistency
+---
+
+
+# Station and Ambulance Consistency
 
 Ambulance allocation must be consistent with the selected station configuration.
 
@@ -203,7 +209,9 @@ The model links station activation and ambulance allocation so that ambulances a
 
 This creates an integrated facility-location and resource-allocation model.
 
-Population-per-Ambulance Constraint
+---
+
+# Population-per-Ambulance Constraint
 
 The model controls the population served by the ambulance resources assigned to each station.
 
@@ -221,14 +229,15 @@ The population assigned to each selected station must therefore remain within th
 
 This constraint connects:
 
-Population
-Demand-area assignment
-Station location
-Ambulance allocation
+* Population
+* Demand-area assignment
+* Station location
+* Ambulance allocation
 
 and prevents the optimization from assigning an excessive population to a limited ambulance capacity.
 
-Net Present Value (NPV)
+---
+# Net Present Value (NPV)
 
 The model incorporates the economic effect of the five-year planning horizon through a Net Present Value formulation.
 
@@ -244,25 +253,28 @@ $$ h \neq g $$
 
 where:
 
-C₁ = first-year modeled operating/response-related cost
-g = annual growth rate
-h = discount rate
-T = planning horizon
+* `C₁ = first-year modeled operating/response-related cost
+*`g = annual growth rate
+*`h = discount rate
+*`T = planning horizon
 
 The implementation uses:
 
-Parameter	Value
-Planning horizon	5 years
-Discount rate	0.08
-Annual growth rate	0.0217
-Second-stage probability parameter	0.10
-Minimum population per ambulance	35,000
-Maximum population per ambulance	55,000
-Average daily calls	120
+| Parameter                  | Value       |
+| -------------------------- | ----------- |
+| Planning horizon      | 5 years      |
+| Discount rate     | 0.08      |
+| Annual growth rate        | 0.0217    |
+| Second-stage probability parameter        | 0.10     |
+| Minimum population per ambulance     | 35,000      |
+| Maximum population per ambulance        | 55,000    |
+| Average daily calls        | 120    |
 
 The NPV component allows the model to incorporate the economic effect of the EMS configuration over multiple years rather than evaluating only a single-year cost.
 
-Model Implementation
+---
+
+# Model Implementation
 
 The optimization model was implemented in Python using PuLP.
 
@@ -287,11 +299,13 @@ Extract the selected stations and ambulance allocation
 
 The model is solved using the CBC optimization solver through PuLP.
 
-Optimization Results
+---
+
+# Optimization Results
 
 The optimization run reported:
 
-Status: Optimal
+`Status: Optimal`
 
 The resulting solution selects 14 EMS station locations from the 65 candidate areas.
 
