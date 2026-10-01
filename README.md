@@ -157,7 +157,7 @@ The main cost parameters used in the implementation are:
 | Type-A station cost        | 494,152     |
 | Type-B station cost        | 169,948     |
 
-پ
+
 ---
 
 # Coverage Constraints
@@ -253,10 +253,10 @@ $$ h \neq g $$
 
 where:
 
-* `C₁ = first-year modeled operating/response-related cost
-*`g = annual growth rate
-*`h = discount rate
-*`T = planning horizon
+* `C₁` = first-year modeled operating/response-related cost
+*`g` = annual growth rate
+*`h` = discount rate
+*`T` = planning horizon
 
 The implementation uses:
 
@@ -280,22 +280,22 @@ The optimization model was implemented in Python using PuLP.
 
 The main modeling steps are:
 
-Define the demand areas
-Define population and demand parameters
-Define candidate station locations
-Define station eligibility
-Define first-stage coverage relationships
-Define second-stage coverage relationships
-Create binary station and coverage variables
-Create integer ambulance allocation variables
-Add coverage constraints
-Add station-type constraints
-Add ambulance capacity constraints
-Calculate the first-year modeled cost
-Calculate NPV
-Construct the objective function
-Solve the mixed-integer optimization model
-Extract the selected stations and ambulance allocation
+1.Define the demand areas
+2.Define population and demand parameters
+3.Define candidate station locations
+4.Define station eligibility
+5.Define first-stage coverage relationships
+6.Define second-stage coverage relationships
+7.Create binary station and coverage variables
+8.Create integer ambulance allocation variables
+9.Add coverage constraints
+10.Add station-type constraints
+11.Add ambulance capacity constraints
+12.Calculate the first-year modeled cost
+13.Calculate NPV
+14.Construct the objective function
+15.Solve the mixed-integer optimization model
+16.Extract the selected stations and ambulance allocation
 
 The model is solved using the CBC optimization solver through PuLP.
 
@@ -311,14 +311,16 @@ The resulting solution selects 14 EMS station locations from the 65 candidate ar
 
 Selected locations:
 
-4, 8, 11, 12, 17, 23, 24, 25, 29, 30, 32, 33, 47, 51
+`4, 8, 11, 12, 17, 23, 24, 25, 29, 30, 32, 33, 47, 51`
 
 The resulting ambulance configuration contains:
 
-20 Type-A ambulances
-9 Type-B ambulances
-29 ambulances in total
-Selected Station Configuration
+* 20 Type-A ambulances
+* 9 Type-B ambulances
+* 29 ambulances in total
+---
+
+# Selected Station Configuration
 Site	Station Type	Ambulances	Population / Ambulance
 4	B	1	50,863.00
 8	A	3	43,019.67
@@ -334,7 +336,10 @@ Site	Station Type	Ambulances	Population / Ambulance
 33	B	1	54,918.00
 47	B	1	54,079.00
 51	B	1	51,914.00
-Ambulance Allocation
+
+---
+
+# Ambulance Allocation
 
 The optimized allocation of ambulances across the selected stations is shown below.
 
@@ -342,19 +347,23 @@ The model does not distribute ambulances equally among the selected stations.
 
 Instead, the allocation depends on the population assigned to each station and the capacity constraints incorporated into the mathematical model.
 
-Site 30 receives the largest allocation, with 10 Type-A ambulances.
+Site 30 receives the largest allocation, with **10 Type-A ambulances.**
 
-Ambulance Fleet Composition
+---
+
+# Ambulance Fleet Composition
 
 The optimized fleet consists of:
 
-20 Type-A ambulances
-9 Type-B ambulances
-29 ambulances in total
+* 20 Type-A ambulances
+* 9 Type-B ambulances
+* 29 ambulances in total
 
 The fleet composition is a direct output of the integrated station-location and resource-allocation model.
 
-Population Coverage
+---
+
+# Population Coverage
 
 The population covered per ambulance varies across the selected stations while remaining within the modeled population-per-ambulance limits.
 
@@ -366,7 +375,9 @@ as the specified capacity range.
 
 This constraint links ambulance capacity to the population served by each selected station.
 
-First-Stage Coverage
+---
+
+#First-Stage Coverage
 
 The number of first-stage covered demand areas varies between selected stations.
 
@@ -379,9 +390,11 @@ Other selected stations provide coverage to smaller groups of demand areas.
 
 This demonstrates that the optimization simultaneously considers station location, coverage relationships, and ambulance allocation.
 
+
+
 ---
 
-Key Results
+# Key Results
 Metric	Result
 Demand areas	65
 Planning horizon	5 years
@@ -395,13 +408,14 @@ Solver status	Optimal
 Solver	CBC
 
 ---
-Decision-Making Perspective
+
+# Decision-Making Perspective
 
 The main value of this project is that it converts an operational healthcare problem into a mathematical decision model.
 
 Instead of only describing historical data, the model produces decisions about:
 
-EMS Demand
+`EMS Demand
     ↓
 Coverage Requirements
     ↓
@@ -413,28 +427,29 @@ Ambulance Allocation
     ↓
 Cost & NPV
     ↓
-Optimized EMS Network
+Optimized EMS Network`
 
 This type of modeling can support strategic decisions involving:
 
-Facility location
-Resource allocation
-Healthcare operations
-Emergency service planning
-Network design
-Cost optimization
-Limitations
+* Facility location
+* Resource allocation
+* Healthcare operations
+* Emergency service planning
+* Network design
+* Cost optimization
+* Limitations
 
 The model is dependent on the assumptions and parameters used in the implementation.
 
 ---
-How to Run
+
+# How to Run
 1. Clone the repository
-git clone https://github.com/MobinaHaghshenas/ambulance-station-location-optimization.git
-cd ambulance-station-location-optimization
+`git clone https://github.com/MobinaHaghshenas/ambulance-station-location-optimization.git
+cd ambulance-station-location-optimization`
 2. Install dependencies
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 3. Run the optimization model
-python src/ambulance_station_location_optimization.py
+`python src/ambulance_station_location_optimization.py`
 
 The script builds the optimization model, solves it using the CBC solver, and prints the resulting station configuration and ambulance allocation.
