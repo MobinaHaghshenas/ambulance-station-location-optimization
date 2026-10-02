@@ -453,10 +453,11 @@ The model is dependent on the assumptions and parameters used in the implementat
 # How to Run
 1. Clone the repository
 `git clone https://github.com/MobinaHaghshenas/ambulance-station-location-optimization.git`
+
 `cd ambulance-station-location-optimization`
-2. Install dependencies
+3. Install dependencies
 `pip install -r requirements.txt`
-3. Run the optimization model
+4. Run the optimization model
 `python src/ambulance_station_location_optimization.py`
 
 The script builds the optimization model, solves it using the CBC solver, and prints the resulting station configuration and ambulance allocation.
